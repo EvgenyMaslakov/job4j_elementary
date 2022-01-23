@@ -11,5 +11,4 @@ public class TrgArea {
         double rsl = TrgArea.area(2, 2, 2);
         System.out.println("area (2, 2, 2) = " + rsl);
     }
-
 }
