@@ -24,13 +24,13 @@ package ru.job4j.condition;
 public class Task45 {
     public static void changeToRoundNum(int number) {
         String rsl = "";
-        if(number % 2 == 1) {
+        if (number % 2 == 1) {
             rsl = "Уменьшено до "
                     + Integer.toString(number / 10 * 10);
-        } else if(number % 10 != 0 && number % 2 == 0) {
+        } else if (number % 10 != 0 && number % 2 == 0) {
             int i = number / 10 * 10 + 10;
             rsl = "Увеличено до " + Integer.toString(i);
-        } else if(number % 10 == 0) {
+        } else if (number % 10 == 0) {
             rsl = "Без изменений";
         }
         System.out.println(rsl);
