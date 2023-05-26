@@ -19,6 +19,18 @@ public class CinemaTest {
     }
 
     @Test
+    public void checkEmptyPlaceOnTopRight() {
+        char[][] places = {
+                {'X', 'O', 'O'},
+                {'O', 'X', 'X'},
+                {'X', 'X', 'X'}
+        };
+        int[] rsl = Cinema.checkEmptyPlace(places);
+        int[] expected = new int[] {0, 2};
+        assertThat(rsl, is(expected));
+    }
+
+    @Test
     public void checkEmptyPlaceOnRight() {
         char[][] places = {
                 {'X', 'O', 'X'},

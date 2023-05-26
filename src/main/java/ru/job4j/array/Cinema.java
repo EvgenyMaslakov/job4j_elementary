@@ -53,6 +53,11 @@ public class Cinema {
                 cell = i;
                 break;
             }
+            if (places[i][places.length - 1 - i] == 'O') {
+                row = i;
+                cell = places.length - 1 - i;
+                break;
+            }
         }
         return row == -1 && cell == -1 ? new int[] {} : new int[] {row, cell};
     }
