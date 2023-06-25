@@ -25,6 +25,8 @@ import java.util.function.Consumer;
  * переход на новую строку через System.out.println
  *
  * Изменения с ноутбука
+ *
+ * Изменения с компа
  */
 public class ConsumerAndThen {
     public static Consumer<String> consumer(String input) {
