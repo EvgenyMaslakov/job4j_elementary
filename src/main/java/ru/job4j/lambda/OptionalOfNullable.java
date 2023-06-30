@@ -37,9 +37,6 @@ import java.util.Optional;
  */
 public class OptionalOfNullable {
     public static Optional<String> findValue(List<String> strings, String value) {
-<<<<<<< HEAD
-
-=======
         String rsl = "";
         for (String string : strings) {
             if (string != null && string.equals(value)) {
@@ -48,7 +45,5 @@ public class OptionalOfNullable {
             }
         }
         return rsl != "" ? Optional.ofNullable(rsl) : Optional.ofNullable(null);
->>>>>>>Object master;
-        origin/master
     }
 }
