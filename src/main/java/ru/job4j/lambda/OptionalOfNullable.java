@@ -5,8 +5,11 @@ import java.util.Objects;
 import java.util.Optional;
 
 /**
+<<<<<<< HEAD
+=======
  * 1.4.1. Lambda
  * 5.3. Optional. Метод ofNullable()
+>>>>>>> origin/master
  *
  * Стоит обратить внимание, что метод of() не принимает null элементы
  *
@@ -18,8 +21,14 @@ import java.util.Optional;
  *
  * Optional.ofNullable(1).ifPresent(System.out::println); // выведет 1
  *
+<<<<<<< HEAD
+ * Optiona1.4.1. Lambda
+ *  * 5.3. Optional. Метод ofNullable()l.ofNullable(null).ifPresent(System.out::println); // ничего выведется, потому что мы получили
+ * пустой Optional
+=======
  * Optional.ofNullable(null).ifPresent(System.out::println); // ничего выведется,
  * потому что мы получили пустой Optional
+>>>>>>> origin/master
  *
  * Ваша задача, написать метод поиск строки среди списка. В списке могут быть null элементы.
  * Чтобы обернуть найденное значение нужно использовать Optional.ofNullable().
@@ -28,6 +37,9 @@ import java.util.Optional;
  */
 public class OptionalOfNullable {
     public static Optional<String> findValue(List<String> strings, String value) {
+<<<<<<< HEAD
+
+=======
         String rsl = "";
         for (String string : strings) {
             if (string != null && string.equals(value)) {
@@ -36,5 +48,7 @@ public class OptionalOfNullable {
             }
         }
         return rsl != "" ? Optional.ofNullable(rsl) : Optional.ofNullable(null);
+>>>>>>>Object master;
+        origin/master
     }
 }
