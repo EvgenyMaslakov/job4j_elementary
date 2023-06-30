@@ -43,18 +43,16 @@ public class OptionalOrElseThrow {
     public static class UserNotFoundException extends RuntimeException { }
 
     public static User orElseThrow(List<User> list, String login) {
-        User rsl = new User("");
-        for (User user : list) {
-            if (user.getLogin().equals(login)) {
-                rsl = user;
-            }
-        }
-        return rsl;
+        return search(list, login).orElseThrow(UserNotFoundException::new);
     }
 
     private static Optional<User> search(List<User> list, String login) {
         Optional<User> user = Optional.empty();
-        //
+        for (User u : list) {
+            if (u.getLogin().equals(login)) {
+                user = Optional.of(u);
+            }
+        }
         return user;
     }
 
