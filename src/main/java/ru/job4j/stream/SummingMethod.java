@@ -96,7 +96,6 @@ public class SummingMethod {
                         pair -> pair.getUser().getName(),
                         Collectors.summingInt(pair -> pair.getBill().getBalance())
                 ));
-
  */
 
         return users.stream()
