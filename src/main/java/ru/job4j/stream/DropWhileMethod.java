@@ -16,6 +16,6 @@ import java.util.stream.Collectors;
  */
 public class DropWhileMethod {
     public static List<Integer> dropWhile(List<Integer> numbers) {
-        return numbers.stream().sorted().dropWhile(number -> number > 0).collect(Collectors.toList());
+        return numbers.stream().sorted().dropWhile(number -> number < 0).collect(Collectors.toList());
     }
 }
