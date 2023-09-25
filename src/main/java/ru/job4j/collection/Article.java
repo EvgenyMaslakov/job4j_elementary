@@ -45,8 +45,10 @@ public class Article {
          *
          */
         for (String word : lineMap.keySet()) {
-            if (!originMap.containsKey(word)
-                    || originMap.containsKey(word)
+            if (!originMap.containsKey(word)) {
+                rsl = false;
+            }
+            if (originMap.containsKey(word)
                     && originMap.get(word) - lineMap.get(word) < 0) {
                 rsl = false;
             }
@@ -57,9 +59,9 @@ public class Article {
 
     public static void main(String[] args) {
         String origin = "Мама мыла раму и окно";
-        String line = "мыла пол";
+        String line = "Мама мыла раму и окно мыла раму и окно пол";
         boolean rsl = true;
-        System.out.println("origin");
+        System.out.println("originMap");
         Map<String, Long> originMap = Arrays.stream(origin.split("[^A-Za-zА-Яа-я]+"))
                 .map(s -> s.toLowerCase())
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
@@ -67,7 +69,7 @@ public class Article {
             System.out.println(word + " " + originMap.get(word));
         }
         System.out.println();
-        System.out.println("line");
+        System.out.println("lineMap");
         Map<String, Long> lineMap = Arrays.stream(line.split("[^A-Za-zА-Яа-я]+"))
                 .map(s -> s.toLowerCase())
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
@@ -76,13 +78,15 @@ public class Article {
         }
         System.out.println();
         for (String word : lineMap.keySet()) {
-            if (!originMap.containsKey(word)
-                    || originMap.containsKey(word)
-            && originMap.get(word) - lineMap.get(word) < 0) {
-                System.out.println(word + " " + " = Нет");
+            if (!originMap.containsKey(word)) {
+                System.out.println(word + " " + " = Условие 1 не проходит");
+                rsl = false;
+            } else if (originMap.containsKey(word)
+                    && originMap.get(word) - lineMap.get(word) < 0) {
+                System.out.println(word + " " + " = Условие 2 не проходит");
                 rsl = false;
             } else {
-                System.out.println(word + " " + " = Да");
+                System.out.println(word + " " + " = Условие проходит");
             }
         }
         System.out.println(rsl);
