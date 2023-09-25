@@ -1,5 +1,6 @@
 package ru.job4j.collection;
 
+import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -19,49 +20,72 @@ public class Article {
 
     public static boolean generateBy(String origin, String line) {
         boolean rsl = true;
+        /**
+         * Строку origin перевожу в мапу,
+         * где ключ это уникальное слово,
+         * а значение это количество слов.
+         */
         Map<String, Long> originMap = Arrays.stream(origin.split("[^A-Za-zА-Яа-я]+"))
                 .map(s -> s.toLowerCase())
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        /**
+         * Строку line перевожу в мапу,
+         * где ключ это уникальное слово,
+         * а значение это количество слов.
+         */
         Map<String, Long> lineMap = Arrays.stream(line.split("[^A-Za-zА-Яа-я]+"))
                 .map(s -> s.toLowerCase())
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-        for (String lineKey : lineMap.keySet()) {
-            for (String originKey : originMap.keySet()) {
-                if (lineKey.equalsIgnoreCase(originKey)) {
-                    rsl = false;
-                    break;
-                }
-            }
-        }
+        /**
+         * Сравниваю строку line со строкой origin.
+         * Если слово из строки line отсутствует в строке origin
+         * или если слово из строки line присутствует в строке origin,
+         * но количество слов в строке origin меньше чем в строке line,
+         * то строка line не получена из origin.
+         *
+         */
         for (String word : lineMap.keySet()) {
-            if (!originMap.containsKey(word) && lineMap.containsKey(word)
-            || originMap.get(word) - lineMap.get(word) <= 0) {
-                    rsl = false;
+            if (!originMap.containsKey(word)
+                    || originMap.containsKey(word)
+                    && originMap.get(word) - lineMap.get(word) < 0) {
+                rsl = false;
             }
         }
-
         return rsl;
-       /* for (String word : lineMap.keySet()) {
-            if (originMap.containsKey(word) && lineMap.containsKey(word)) {
-                if (originMap.get(word) - lineMap.get(word) >= 0) {
-                    continue;
-                } else {
-                    return false;
-                }
-            } else {
-                return false;
-            }
-        }
-        return true;*/
-
     }
 
 
     public static void main(String[] args) {
-        String origin = "Мама мама мАмА мыла, раму! раму и окно мама";
-        Arrays.stream(origin.split("[^A-Za-zА-Яа-я]+"))
+        String origin = "Мама мыла раму и окно";
+        String line = "мыла пол";
+        boolean rsl = true;
+        System.out.println("origin");
+        Map<String, Long> originMap = Arrays.stream(origin.split("[^A-Za-zА-Яа-я]+"))
                 .map(s -> s.toLowerCase())
-                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
-                .forEach((k, v) -> System.out.println(k + " " + v));
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        for (String word : originMap.keySet()) {
+            System.out.println(word + " " + originMap.get(word));
+        }
+        System.out.println();
+        System.out.println("line");
+        Map<String, Long> lineMap = Arrays.stream(line.split("[^A-Za-zА-Яа-я]+"))
+                .map(s -> s.toLowerCase())
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        for (String word : lineMap.keySet()) {
+            System.out.println(word + " " + lineMap.get(word));
+        }
+        System.out.println();
+        for (String word : lineMap.keySet()) {
+            if (!originMap.containsKey(word)
+                    || originMap.containsKey(word)
+            && originMap.get(word) - lineMap.get(word) < 0) {
+                System.out.println(word + " " + " = Нет");
+                rsl = false;
+            } else {
+                System.out.println(word + " " + " = Да");
+            }
+        }
+        System.out.println(rsl);
+
     }
 }
