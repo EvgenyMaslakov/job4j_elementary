@@ -25,10 +25,8 @@ public class Article {
                 .map(s -> s.toLowerCase())
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
         for (String word : lineMap.keySet()) {
-            if (!originMap.containsKey(word)) {
-                rsl = false;
-            }
-            if (originMap.containsKey(word)
+            if (!originMap.containsKey(word)
+            || originMap.containsKey(word)
                     && originMap.get(word) - lineMap.get(word) < 0) {
                 rsl = false;
             }
