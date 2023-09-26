@@ -1,8 +1,6 @@
 package ru.job4j.collection;
 
-import java.sql.SQLOutput;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -20,30 +18,12 @@ public class Article {
 
     public static boolean generateBy(String origin, String line) {
         boolean rsl = true;
-        /**
-         * Строку origin перевожу в мапу,
-         * где ключ это уникальное слово,
-         * а значение это количество слов.
-         */
         Map<String, Long> originMap = Arrays.stream(origin.split("[^A-Za-zА-Яа-я]+"))
                 .map(s -> s.toLowerCase())
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-        /**
-         * Строку line перевожу в мапу,
-         * где ключ это уникальное слово,
-         * а значение это количество слов.
-         */
         Map<String, Long> lineMap = Arrays.stream(line.split("[^A-Za-zА-Яа-я]+"))
                 .map(s -> s.toLowerCase())
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-        /**
-         * Сравниваю строку line со строкой origin.
-         * Если слово из строки line отсутствует в строке origin
-         * или если слово из строки line присутствует в строке origin,
-         * но количество слов в строке origin меньше чем в строке line,
-         * то строка line не получена из origin.
-         *
-         */
         for (String word : lineMap.keySet()) {
             if (!originMap.containsKey(word)) {
                 rsl = false;
