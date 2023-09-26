@@ -34,7 +34,6 @@ public class Article {
         return rsl;
     }
 
-
     public static void main(String[] args) {
         String origin = "Мама мыла раму и окно";
         String line = "Мама мыла раму и окно мыла раму и окно пол";
