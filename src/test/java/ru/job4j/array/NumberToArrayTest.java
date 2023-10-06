@@ -15,6 +15,5 @@ public class NumberToArrayTest {
         assertArrayEquals(new int[] {6, 5, 4, 3, 2, 1}, NumberToArray.resolve(123456));
         assertArrayEquals(new int[] {7, 6, 5, 4, 3, 2, 1}, NumberToArray.resolve(1234567));
         assertArrayEquals(new int[] {8, 7, 6, 5, 4, 3, 2, 1}, NumberToArray.resolve(12345678));
-     //   assertArrayEquals(new int[] {9, 8, 7, 6, 5, 4, 3, 2, 1}, NumberToArray.resolve(123456789));
     }
 }

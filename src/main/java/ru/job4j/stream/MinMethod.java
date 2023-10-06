@@ -11,8 +11,9 @@ import java.util.List;
  *
  * Пример,
  *
- * Integer min = List.of(3, 2, 1).stream().min((n1, n2) -> Integer.compare(n1, n2)).get();
- * // вернет 1
+ * Integer min = List.of(3, 2, 1).stream().min((n1, n2) ->
+ * Integer.compare(n1, n2)).get();
+ *  вернет 1
  *
  * Ваша задача найти строку с минимальной длиной. Размер списка больше 0
  */

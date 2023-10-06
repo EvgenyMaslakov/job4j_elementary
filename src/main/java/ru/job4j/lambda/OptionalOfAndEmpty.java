@@ -21,9 +21,9 @@ import java.util.Optional;
  *
  * Например,
  *
- * Optional<Integer> num1 = Optional.of(1);      // внутри храниться значение 1
+ * Optional<Integer> num1 = Optional.of(1);       внутри храниться значение 1
  *
- * Optional<Integer> num2 = Optional.empty(); // внутри ничего не храниться
+ * Optional<Integer> num2 = Optional.empty();  внутри ничего не храниться
  *
  * Ваша задача написать метод поиска строки среди списка строк. Если значение найдено,
  * то нужно вернуть Optional из этого значения, в противном случае вернуть пустой Optional.

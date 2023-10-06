@@ -16,11 +16,11 @@ import java.util.Optional;
  *
  * Например
  *
- * Optional.of(1).orElseThrow(); // исключения не будет, т.к. значение есть
+ * Optional.of(1).orElseThrow();  исключения не будет, т.к. значение есть
  *
- * Optional.empty().orElseThrow(); // будет исключение NoSuchElementException
+ * Optional.empty().orElseThrow();  будет исключение NoSuchElementException
  *
- * Optional.empty().orElseThrow(НашеИсключение::new); // будет исключение НашеИсключение
+ * Optional.empty().orElseThrow(НашеИсключение::new);  будет исключение НашеИсключение
  *
  * Ваша задача написать метод поиска пользователя по логину.
  * Если ничего не найдено, то нужно вернуть исключение

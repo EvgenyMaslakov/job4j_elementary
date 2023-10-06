@@ -14,9 +14,9 @@ import java.util.List;
  *
  * Например, прибавим числа списка к 10
  *
- * Integer sum = List.of(1, 2, 3).stream().reduce(10, (n1, n2) -> n1 + n2); // 16
+ * Integer sum = List.of(1, 2, 3).stream().reduce(10, (n1, n2) -> n1 + n2);  16
  *
- * Integer sum = List.of().stream().reduce(10, (n1, n2) -> n1 + n2); // 10,
+ * Integer sum = List.of().stream().reduce(10, (n1, n2) -> n1 + n2);  10,
  * т.к. список пуст
  *
  * Ваша задача умножить 5 на элементы списка

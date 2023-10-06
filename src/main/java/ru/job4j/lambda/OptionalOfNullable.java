@@ -5,11 +5,11 @@ import java.util.Objects;
 import java.util.Optional;
 
 /**
-<<<<<<< HEAD
-=======
+ * <<<<<<< HEAD
+ * =======
  * 1.4.1. Lambda
  * 5.3. Optional. Метод ofNullable()
->>>>>>> origin/master
+ * >>>>>>> origin/master
  *
  * Стоит обратить внимание, что метод of() не принимает null элементы
  *
@@ -19,21 +19,22 @@ import java.util.Optional;
  *
  * Например,
  *
- * Optional.ofNullable(1).ifPresent(System.out::println); // выведет 1
+ * Optional.ofNullable(1).ifPresent(System.out::println);  выведет 1
  *
-<<<<<<< HEAD
+ * <<<<<<< HEAD
  * Optiona1.4.1. Lambda
  *  * 5.3. Optional. Метод ofNullable()l.ofNullable(null).ifPresent(System.out::println); // ничего выведется, потому что мы получили
  * пустой Optional
-=======
- * Optional.ofNullable(null).ifPresent(System.out::println); // ничего выведется,
+ * Optional.ofNullable(null).ifPresent(System.out::println);  ничего выведется,
  * потому что мы получили пустой Optional
->>>>>>> origin/master
+ * >>>>>>> origin/master
  *
- * Ваша задача, написать метод поиск строки среди списка. В списке могут быть null элементы.
+ * Ваша задача, написать метод поиск строки среди списка. В списке могут быть
+ * null элементы.
  * Чтобы обернуть найденное значение нужно использовать Optional.ofNullable().
  * Для безопасной проверки можно использовать Objects.equals().
- * Если что-то найдено, нужно вернуть Optional из этого значения, в противном случае пустой Optional
+ * Если что-то найдено, нужно вернуть Optional из этого значения,
+ * в противном случае пустой Optional
  */
 public class OptionalOfNullable {
     public static Optional<String> findValue(List<String> strings, String value) {
