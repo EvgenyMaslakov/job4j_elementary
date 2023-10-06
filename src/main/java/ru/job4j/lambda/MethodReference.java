@@ -28,7 +28,7 @@ import java.util.function.Consumer;
  *
  * Еще пример
  *
- * Function<Integer, Integer> abs = Math::abs; // можно применить потому что
+ * Function<Integer, Integer> abs = Math::abs;  можно применить потому что
  * сигнатура метода abs(): int (int)
  *
  * Когда мы используем ссылки на методы, мы обращаемся к методам. Как вы знаете

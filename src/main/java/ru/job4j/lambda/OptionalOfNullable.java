@@ -13,8 +13,10 @@ import java.util.Optional;
  *
  * Стоит обратить внимание, что метод of() не принимает null элементы
  *
- * Чтобы создать Optional в случае если есть null элементы можно использовать метод Optional.ofNullable().
- * Этот метод возвращает пустой Optional если передано null значение и Optional из переданного значения,
+ * Чтобы создать Optional в случае если есть null элементы можно использовать
+ * метод Optional.ofNullable().
+ * Этот метод возвращает пустой Optional если передано null значение и Optional
+ * из переданного значения,
  * если оно не null.
  *
  * Например,
@@ -23,7 +25,9 @@ import java.util.Optional;
  *
  * <<<<<<< HEAD
  * Optiona1.4.1. Lambda
- *  * 5.3. Optional. Метод ofNullable()l.ofNullable(null).ifPresent(System.out::println); // ничего выведется, потому что мы получили
+ *  * 5.3. Optional. Метод
+ *  ofNullable()l.ofNullable(null).ifPresent(System.out::println);
+ *  ничего выведется, потому что мы получили
  * пустой Optional
  * Optional.ofNullable(null).ifPresent(System.out::println);  ничего выведется,
  * потому что мы получили пустой Optional
