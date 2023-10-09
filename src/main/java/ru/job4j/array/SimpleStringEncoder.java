@@ -12,24 +12,15 @@ public class SimpleStringEncoder {
         for (int i = 1; i < input.length(); i++) {
             if (symbol == input.charAt(i)) {
                 counter++;
-            } else if (symbol != input.charAt(i) && counter > 1) {
+            } else {
                 result += symbol;
-                result += counter;
-                symbol = input.charAt(i);
-                counter = 1;
-            } else if (symbol != input.charAt(i) && counter == 1) {
-                result += symbol;
+                result += counter > 1 ? counter : "";
                 symbol = input.charAt(i);
                 counter = 1;
             }
         }
-        if (counter > 1) {
-            result += symbol;
-            result += counter;
-        } else {
-            result += symbol;
-        }
-
+        result += symbol;
+        result += counter > 1 ? counter : "";
         return result;
     }
 }
