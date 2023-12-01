@@ -10,6 +10,7 @@ name: GitHub Action
 
 on:
   push:
+  pull_request:
 
 jobs:
   build:
